@@ -75,7 +75,7 @@ export default {
                 top: 0;
                 right: 0;
                 bottom: .44rem;
-                padding .43rem;
+                padding .44rem;
                 overflow: hidden;
                 .img{
                     width: 100%;
