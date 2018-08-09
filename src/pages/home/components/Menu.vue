@@ -4,9 +4,9 @@
           <swiper-slide v-for="(item, index) of pages" :key="index">
             <div class="menu-icon"  v-for="item of item" :key="item.id">
                 <div class="menu-img">
-                    <img :src="item.src" class="img">
+                    <img :src="item.imgUrl" class="img">
                 </div>
-                <p class="menu-p">{{item.name}}</p>
+                <p class="menu-p">{{item.desc}}</p>
             </div>
         </swiper-slide>
         <div class="swiper-pagination" slot="pagination"></div>
@@ -17,63 +17,16 @@
 <script>
 export default {
   name: 'HomeMenu',
+  props: {
+    menu: Array
+  },
   data () {
     return {
       swiperOption: {
         pagination: {
           el: '.swiper-pagination'
         }
-      },
-      menu: [{
-        id: '001',
-        src: '../../../../static/menu-img/f3dd6c383aeb3b02.png',
-        name: '景点门票'
-      },
-      {
-        id: '002',
-        src: '../../../../static/menu-img/一日游.png',
-        name: '一日游'
-      },
-      {
-        id: '003',
-        src: '../../../../static/menu-img/郑州必游.png',
-        name: '郑州必游'
-      },
-      {
-        id: '004',
-        src: '../../../../static/menu-img/夏日玩水.png',
-        name: '夏日玩水'
-      },
-      {
-        id: '005',
-        src: '../../../../static/menu-img/名胜古迹.png',
-        name: '名胜古迹'
-      },
-      {
-        id: '006',
-        src: '../../../../static/menu-img/自然风光.png',
-        name: '自然风光'
-      },
-      {
-        id: '007',
-        src: '../../../../static/menu-img/当地好玩.png',
-        name: '当地好玩'
-      },
-      {
-        id: '008',
-        src: '../../../../static/menu-img/学生专享.png',
-        name: '学生专享'
-      },
-      {
-        id: '009',
-        src: '../../../../static/menu-img/汽车票.png',
-        name: '汽车票'
-      },
-      {
-        id: '010',
-        src: '../../../../static/menu-img/惠游栾川.png',
-        name: '惠游栾川'
-      }]
+      }
     }
   },
   computed: {
@@ -110,7 +63,7 @@ export default {
             position: relative;
             height: 0;
             .menu-img{
-                padding: .38rem;
+                padding: .4rem;
                 padding-top: .1rem;
                 overflow: hidden;
                 .img{

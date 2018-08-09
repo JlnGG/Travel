@@ -2,13 +2,13 @@
   <div>
     <div class="tittle">热销推荐</div>
     <ul>
-      <li v-for="item of imgs" :key="item.id" class="recommend-li">
+      <li v-for="item of recommend" :key="item.id" class="recommend-li">
         <div class="recommend-img">
-          <img :src="item.src" class="img">
+          <img :src="item.imgUrl" class="img">
         </div>
         <div class="recommend-intro">
-          <p class="recommend-tittle">{{item.tittle}}</p>
-          <p class="recommend-text">{{item.text}}</p>
+          <p class="recommend-tittle">{{item.title}}</p>
+          <p class="recommend-text">{{item.desc}}</p>
           <button class="recommend-button">查看详情</button>
         </div>
       </li>
@@ -19,35 +19,8 @@
 <script>
 export default {
   name: 'HomeRecommend',
-  data () {
-    return {
-      imgs: [
-        {
-          id: '001',
-          src: '../../../../static/recommend-img/嵩山.jpg',
-          tittle: '嵩山',
-          text: '嵩山'
-        },
-        {
-          id: '002',
-          src: '../../../../static/recommend-img/嵩山.jpg',
-          tittle: '嵩山',
-          text: '嵩山'
-        },
-        {
-          id: '003',
-          src: '../../../../static/recommend-img/嵩山.jpg',
-          tittle: '嵩山',
-          text: '嵩山'
-        },
-        {
-          id: '004',
-          src: '../../../../static/recommend-img/嵩山.jpg',
-          tittle: '嵩山',
-          text: '嵩山'
-        }
-      ]
-    }
+  props: {
+    recommend: Array
   }
 }
 </script>

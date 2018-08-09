@@ -21,20 +21,20 @@ export default {
 </script>
 
 <style lang="stylus" scoped>
- @import '~@/assets/styles/varstylus.styl'
- .header{
-  height:.86rem;
-  display :flex;
-  background: $bgcolor;
-  color: #fff;
-  line-height: .86rem;
-   .header-left{
-    width: .64rem;
-    float: left;
-     .back-icon{
-      text-align: center;
-     }
-   }
+  @import '~@/assets/styles/varstylus.styl'
+  .header{
+    height:.86rem;
+    display :flex;
+    background: $bgcolor;
+    color: #fff;
+    line-height: .86rem;
+    .header-left{
+      width: .64rem;
+      float: left;
+      .back-icon{
+        text-align: center;
+      }
+    }
     .header-input{
       background: #fff;
       flex:1;

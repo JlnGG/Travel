@@ -2,13 +2,13 @@
   <div>
     <div class="tittle">周末去哪儿</div>
     <ul>
-      <li v-for="item of imgs" :key="item.id" class="recommend-li">
+      <li v-for="item of weekends" :key="item.id" class="recommend-li">
         <div class="recommend-img">
-          <img :src="item.src" class="img">
+          <img :src="item.imgUrl" class="img">
         </div>
         <div class="recommend-intro">
-          <p class="recommend-tittle">{{item.tittle}}</p>
-          <p class="recommend-text">{{item.text}}</p>
+          <p class="recommend-tittle">{{item.title}}</p>
+          <p class="recommend-text">{{item.desc}}</p>
         </div>
       </li>
     </ul>
@@ -18,6 +18,9 @@
 <script>
 export default {
   name: 'HomeWeekends',
+  props: {
+    weekends: Array
+  },
   data () {
     return {
       imgs: [
