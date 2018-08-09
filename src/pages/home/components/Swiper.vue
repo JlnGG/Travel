@@ -47,10 +47,10 @@ export default {
   .wraper{
     width: 100%;
     height: 0;
-    padding-bottom: 25.6%;
+    padding-bottom: 26.6%;
     background-color:#eee;
     .swiper-img{
-      width: 100%;
+      width: 104%;
     }
   }
 </style>
