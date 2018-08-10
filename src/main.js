@@ -6,9 +6,9 @@ import router from './router'
 import './assets/styles/reset.css'
 import './assets/styles/iconfont.css'
 import './assets/styles/border.css'
+import 'swiper/dist/css/swiper.css'
 import FastClick from 'fastclick'
 import HomeSwiper from 'vue-awesome-swiper'
-import 'swiper/dist/css/swiper.css'
 
 Vue.config.productionTip = false
 FastClick.attach(document.body)
