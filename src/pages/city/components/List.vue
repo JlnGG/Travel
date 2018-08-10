@@ -1,82 +1,89 @@
 <template>
-  <div class="list">
-    <div class="area">
-      <div class="city">当前城市</div>
-      <div class="buttons-city">
-        <div class="button-city">北京</div>
+  <div class="list" ref="scroll">
+    <div>
+      <div class="area">
+        <div class="city">当前城市</div>
+        <div class="buttons-city">
+          <div class="button-city">北京</div>
+        </div>
       </div>
-    </div>
-    <div class="area">
-      <div class="city">热门城市</div>
-      <div class="buttons-city">
-        <div class="button-city">北京</div>
+      <div class="area">
+        <div class="city">热门城市</div>
+        <div class="buttons-city">
+          <div class="button-city">北京</div>
+        </div>
+        <div class="buttons-city">
+          <div class="button-city">北京</div>
+        </div>
+        <div class="buttons-city">
+          <div class="button-city">北京</div>
+        </div>
+        <div class="buttons-city">
+          <div class="button-city">北京</div>
+        </div>
+        <div class="buttons-city">
+          <div class="button-city">北京</div>
+        </div>
       </div>
-      <div class="buttons-city">
-        <div class="button-city">北京</div>
+      <div class="area">
+        <div class="city">A</div>
+        <div class="city-list">
+          <ul class="city-ul">
+            <li class="city-li">北京</li>
+            <li class="city-li">北京</li>
+            <li class="city-li">北京</li>
+            <li class="city-li">北京</li>
+            <li class="city-li">北京</li>
+          </ul>
+        </div>
       </div>
-      <div class="buttons-city">
-        <div class="button-city">北京</div>
+      <div class="area">
+        <div class="city">B</div>
+        <div class="city-list">
+          <ul class="city-ul">
+            <li class="city-li">北京</li>
+            <li class="city-li">北京</li>
+            <li class="city-li">北京</li>
+            <li class="city-li">北京</li>
+            <li class="city-li">北京</li>
+            <li class="city-li">北京</li>
+            <li class="city-li">北京</li>
+          </ul>
+        </div>
       </div>
-      <div class="buttons-city">
-        <div class="button-city">北京</div>
-      </div>
-      <div class="buttons-city">
-        <div class="button-city">北京</div>
-      </div>
-    </div>
-    <div class="area">
-      <div class="city">A</div>
-      <div class="city-list">
-        <ul class="city-ul">
-          <li class="city-li">北京</li>
-          <li class="city-li">北京</li>
-          <li class="city-li">北京</li>
-          <li class="city-li">北京</li>
-          <li class="city-li">北京</li>
-          <li class="city-li">北京</li>
-        </ul>
-      </div>
-    </div>
-    <div class="area">
-      <div class="city">B</div>
-      <div class="city-list">
-        <ul class="city-ul">
-          <li class="city-li">北京</li>
-          <li class="city-li">北京</li>
-          <li class="city-li">北京</li>
-          <li class="city-li">北京</li>
-          <li class="city-li">北京</li>
-          <li class="city-li">北京</li>
-          <li class="city-li">北京</li>
-        </ul>
-      </div>
-    </div>
-    <div class="area">
-      <div class="city">C</div>
-      <div class="city-list">
-        <ul class="city-ul">
-          <li class="city-li">北京</li>
-          <li class="city-li">北京</li>
-          <li class="city-li">北京</li>
-          <li class="city-li">北京</li>
-          <li class="city-li">北京</li>
-          <li class="city-li">北京</li>
-          <li class="city-li">北京</li>
-          <li class="city-li">北京</li>
-          <li class="city-li">北京</li>
-        </ul>
+      <div class="area">
+        <div class="city">C</div>
+        <div class="city-list">
+          <ul class="city-ul">
+            <li class="city-li">北京</li>
+            <li class="city-li">北京</li>
+            <li class="city-li">北京</li>
+            <li class="city-li">北京</li>
+            <li class="city-li">北京</li>
+            <li class="city-li">北京</li>
+            <li class="city-li">北京</li>
+            <li class="city-li">北京</li>
+            <li class="city-li">北京</li>
+          </ul>
+        </div>
       </div>
     </div>
   </div>
 </template>
 
 <script>
+import BetterScroll from 'better-scroll'
+
 export default {
-  name: 'CityList'
+  name: 'CityList',
+  mounted () {
+    new BetterScroll(this.$refs.scroll)
+  }
 }
 </script>
 
 <style lang="stylus" scoped>
+
   @import '~@/assets/styles/varstylus.styl'
 
   .list{
@@ -93,7 +100,7 @@ export default {
         clear: both;
       }
       .city{
-        line-height: .4rem;
+        line-height: .54rem;
         background-color: #eee;
         padding-left: .2rem;
         color: #666;
