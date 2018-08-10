@@ -54,11 +54,11 @@ export default {
     .menu{
         overflow: hidden;
         height: 0;
-        padding-bottom: 49.5%;
+        padding-bottom: 3.8rem;
         padding-top: .1rem;
         .menu-icon{
             width: 25%;
-            padding-bottom: 21%;
+            padding-bottom: 1.6rem;
             float: left;
             position: relative;
             height: 0;
@@ -67,7 +67,7 @@ export default {
                 padding-top: .1rem;
                 overflow: hidden;
                 .img{
-                    width: 100%;
+                    width: 1rem;
                     display:block;
                     margin: 0 auto;
                 }

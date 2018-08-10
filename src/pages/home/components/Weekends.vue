@@ -64,7 +64,7 @@ export default {
   .recommend-img{
     overflow: hidden;
     height: 0;
-    padding-bottom:33.9%;
+    padding-bottom:37.09%;
     .img{
       width: 100%;
     }
