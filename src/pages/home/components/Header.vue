@@ -55,6 +55,7 @@ export default {
       width: 1.24rem;
       float: right;
       text-align: center;
+      color: #fff;
       .city-icon{
         font-size: .24rem;
       }
