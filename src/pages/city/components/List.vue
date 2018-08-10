@@ -9,61 +9,15 @@
       </div>
       <div class="area">
         <div class="city">热门城市</div>
-        <div class="buttons-city">
-          <div class="button-city">北京</div>
-        </div>
-        <div class="buttons-city">
-          <div class="button-city">北京</div>
-        </div>
-        <div class="buttons-city">
-          <div class="button-city">北京</div>
-        </div>
-        <div class="buttons-city">
-          <div class="button-city">北京</div>
-        </div>
-        <div class="buttons-city">
-          <div class="button-city">北京</div>
+        <div class="buttons-city" v-for="hotcity of hotCities" :key="hotcity.id">
+          <div class="button-city">{{hotcity.name}}</div>
         </div>
       </div>
-      <div class="area">
-        <div class="city">A</div>
+      <div class="area" v-for="(items , key ,index) of cities" :key="index">
+        <div class="city">{{key}}</div>
         <div class="city-list">
-          <ul class="city-ul">
-            <li class="city-li">北京</li>
-            <li class="city-li">北京</li>
-            <li class="city-li">北京</li>
-            <li class="city-li">北京</li>
-            <li class="city-li">北京</li>
-          </ul>
-        </div>
-      </div>
-      <div class="area">
-        <div class="city">B</div>
-        <div class="city-list">
-          <ul class="city-ul">
-            <li class="city-li">北京</li>
-            <li class="city-li">北京</li>
-            <li class="city-li">北京</li>
-            <li class="city-li">北京</li>
-            <li class="city-li">北京</li>
-            <li class="city-li">北京</li>
-            <li class="city-li">北京</li>
-          </ul>
-        </div>
-      </div>
-      <div class="area">
-        <div class="city">C</div>
-        <div class="city-list">
-          <ul class="city-ul">
-            <li class="city-li">北京</li>
-            <li class="city-li">北京</li>
-            <li class="city-li">北京</li>
-            <li class="city-li">北京</li>
-            <li class="city-li">北京</li>
-            <li class="city-li">北京</li>
-            <li class="city-li">北京</li>
-            <li class="city-li">北京</li>
-            <li class="city-li">北京</li>
+          <ul class="city-ul" v-for="item of items" :key="item.id">
+            <li class="city-li">{{item.name}}</li>
           </ul>
         </div>
       </div>
@@ -78,6 +32,10 @@ export default {
   name: 'CityList',
   mounted () {
     new BetterScroll(this.$refs.scroll)
+  },
+  props:{
+    hotCities: Array,
+    cities: Object
   }
 }
 </script>

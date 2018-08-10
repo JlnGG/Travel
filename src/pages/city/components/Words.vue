@@ -1,21 +1,15 @@
 <template>
-  <ul class="ul">
-    <li class="li"><a href="#A">A</a></li>
-    <li class="li"><a href="#B">B</a></li>
-    <li class="li"><a href="#C">C</a></li>
-    <li class="li"><a href="#D">D</a></li>
-    <li class="li"><a href="#E">E</a></li>
-    <li class="li"><a href="#F">F</a></li>
-    <li class="li"><a href="#G">G</a></li>
-    <li class="li"><a href="#H">H</a></li>
-    <li class="li"><a href="#I">I</a></li>
-    <li class="li"><a href="#G">J</a></li>
+  <ul class="ul" >
+    <li class="li" v-for="(items , key ,index) of citieys" :key="index"><a href="#A">{{key}}</a></li>
   </ul>
 </template>
 
 <script>
 export default {
-  name: 'CityWords'
+  name: 'CityWords',
+  props: {
+    citieys: Object
+  }
 }
 </script>
 

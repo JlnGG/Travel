@@ -34,7 +34,6 @@ export default {
         .then(this.getHomeInfoSucc)
     },
     getHomeInfoSucc (res) {
-      console.log(res)
       const data = res.data
       const dataI = res.data.data
       if (data.ret && dataI) {
