@@ -41,7 +41,7 @@ export default {
       this.timer = setTimeout(function() {
         const list = []
         for ( let v in _this.cities ) {
-          _this.cities[v].forEach( (ref) => {
+          _this.cities[v].forEach( function(ref) {
             if (  ref.spell.indexOf ( _this.message ) > -1 || ref.name.indexOf ( _this.message ) > -1 ) {
               list.push (ref)
             }
