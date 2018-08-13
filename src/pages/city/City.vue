@@ -2,8 +2,8 @@
   <div>
     <City-header></City-header>
     <City-search></City-search>
-    <City-list :hotCities="this.hotCities" :cities="cities"></City-list>
-    <city-words :citieys="cities"></city-words>
+    <City-list :hotCities="this.hotCities" :cities="cities" :worlds="worlds" :touchIndex="touchIndex"></City-list>
+    <city-words :citieys="cities" @clickList="clickList" @touchList="touchList"></city-words>
   </div>
 </template>
 
@@ -22,7 +22,9 @@ export default {
   data () {
     return {
       hotCities: [],
-      cities: {}
+      cities: {},
+      worlds: '',
+      touchIndex: ''
     }
   },
   methods: {
@@ -38,6 +40,12 @@ export default {
         this.hotCities = dataD.hotCities;
         this.cities = dataD.cities
       }
+    },
+    clickList(res){
+      this.worlds = res
+    },
+    touchList(res){
+      this.touchIndex = res
     }
   },
   components: {
