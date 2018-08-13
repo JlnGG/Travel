@@ -9,7 +9,8 @@ export default {
   name: 'CityWords',
   data () {
     return {
-      touchStart : false
+      touchStart : false,
+      timer: null
     }
   },
   props: {
@@ -24,12 +25,21 @@ export default {
       this.touchStart = true
     },
     handTouchMove (e) {
-      const startY = this.$refs['A'][0].offsetTop
-      const touchY = e.touches[0].clientY -74
-      const index = Math.floor (( touchY - startY ) / 22 )
-      if ( index >= 0 && index < this.cities.length) {
-        const city = this.cities[index]
-        this.$emit ("touchList" , city)
+      if ( this.touchStart ) {
+        if ( this.timer ) {
+          clearTimeout(this.timer)
+        }else{
+          const _this = this
+          setTimeout(function() {
+            const startY = _this.$refs['A'][0].offsetTop
+            const touchY = e.touches[0].clientY -74
+            const index = Math.floor (( touchY - startY ) / 22 )
+            if ( index >= 0 && index < _this.cities.length) {
+              const city = _this.cities[index]
+              _this.$emit ("touchList" , city)
+            }
+          }, 30);
+        }
       }
     },
     handTouchEnd () {
