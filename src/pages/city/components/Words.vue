@@ -28,18 +28,17 @@ export default {
       if ( this.touchStart ) {
         if ( this.timer ) {
           clearTimeout(this.timer)
-        }else{
-          const _this = this
-          setTimeout(function() {
-            const startY = _this.$refs['A'][0].offsetTop
-            const touchY = e.touches[0].clientY -74
-            const index = Math.floor (( touchY - startY ) / 22 )
-            if ( index >= 0 && index < _this.cities.length) {
-              const city = _this.cities[index]
-              _this.$emit ("touchList" , city)
-            }
-          }, 30);
         }
+        const _this = this
+        this.timer = setTimeout(function() {
+          const startY = _this.$refs['A'][0].offsetTop
+          const touchY = e.touches[0].clientY -74
+          const index = Math.floor (( touchY - startY ) / 22 )
+          if ( index >= 0 && index < _this.cities.length) {
+            const city = _this.cities[index]
+            _this.$emit ("touchList" , city)
+          }
+        }, 15)
       }
     },
     handTouchEnd () {
