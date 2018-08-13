@@ -33,7 +33,7 @@ export default {
         .then(this.cityInfoget)
     },
     cityInfoget(res) {
-      console.log(res)
+      // console.log(res)
       const data = res.data;
       const dataD = data.data;
       if(data.ret && dataD) {

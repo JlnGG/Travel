@@ -5,7 +5,7 @@
     </div>
     <div class="search-list" ref="search" v-show="message.length">
       <ul>
-        <li class= "search-item" v-for="item of lists" :key="item.id">{{item.name}}</li>
+        <li class= "search-item" v-for="item of lists" :key="item.id" @click="changeHere(item.name)">{{item.name}}</li>
         <li v-show="!lists.length" class= "search-item">没有相对应的匹配结果</li>
       </ul>
     </div>
@@ -48,14 +48,19 @@ export default {
           })
         }
         _this.lists = list
-        console.log(_this.lists)
+        // console.log(_this.lists)
       }, 14);
     }
   },
   mounted () {
     this.scroll = new BetterScroll (this.$refs.search)
   },
-
+  methods: {
+    changeHere (city) {
+      this.$store.dispatch("changeCity",city)
+      this.$router.push('/')
+    }
+  }
 }
 </script>
 

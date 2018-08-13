@@ -1,6 +1,6 @@
 <template>
 <div>
- <Home-header :here="here"></Home-header>
+ <Home-header></Home-header>
  <Home-swiper :swiperImg="swiperImg"></Home-swiper>
  <Home-menu :menu="menu"></Home-menu>
  <Home-recommend :recommend="recommend"></Home-recommend>
@@ -46,7 +46,6 @@ export default {
   },
   data () {
     return {
-      here: '',
       swiperImg: [],
       recommend: [],
       weekends: [],

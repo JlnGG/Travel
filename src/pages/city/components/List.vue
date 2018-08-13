@@ -4,20 +4,20 @@
       <div class="area">
         <div class="city">当前城市</div>
         <div class="buttons-city">
-          <div class="button-city">北京</div>
+          <div class="button-city">{{this.$store.state.city}}</div>
         </div>
       </div>
       <div class="area">
         <div class="city">热门城市</div>
         <div class="buttons-city" v-for="hotcity of hotCities" :key="hotcity.id">
-          <div class="button-city">{{hotcity.name}}</div>
+          <div class="button-city" @click="changeHere(hotcity.name)">{{hotcity.name}}</div>
         </div>
       </div>
       <div class="area" v-for="(items , key ,index) of cities" :key="key" :ref="key">
         <div class="city">{{key}}</div>
         <div class="city-list">
           <ul class="city-ul" v-for="item of items" :key="item.id">
-            <li class="city-li">{{item.name}}</li>
+            <li class="city-li" @click="changeHere(item.name)">{{item.name}}</li>
           </ul>
         </div>
       </div>
@@ -32,6 +32,12 @@ export default {
   name: 'CityList',
   mounted () {
     this.scroll = new BetterScroll(this.$refs.scroll)
+  },
+  methods: {
+    changeHere (city) {
+      this.$store.dispatch("changeCity",city)
+      this.$router.push('/')
+    }
   },
   props:{
     hotCities: Array,
